@@ -1,14 +1,15 @@
 import React from 'react';
 import { Link, useLoaderData } from 'react-router-dom';
+import Tshirts from '../Tshirt/Tshirts';
 
 const Home = () => {
     const data = useLoaderData();
-    console.log(data)
+    console.log(data);
     return (
-        <div>
-            <h2>This is Home</h2>
+        <div style={{display : 'grid', gridTemplateColumns : '1fr 1fr 1fr'}}>
+            
             {
-                data.map(tshirt => <p> {tshirt._id} </p> )
+                data.map(tshirt => <Tshirts key={tshirt._id} tshirt={tshirt}></Tshirts> )
             }
         </div>
     );
